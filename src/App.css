@@ -1,38 +1,155 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 90rem;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 10vmin;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
+
+.BookBtn {
+  height: 4vmin;
+  width: 10vmin;
+  margin-right: 65%;
+  margin-top: 3vmin;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #f98012;
   color: white;
+  cursor: pointer;
+  transition: 0.4s;
+
 }
 
-.App-link {
-  color: #61dafb;
+.BookBtn:hover {
+  background-color: rgb(4, 4, 56);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.oversigt {
+  color: black;
+  margin-top: 3vmin;
+  font-size: 25px;
+  text-decoration: none;
+  margin-bottom: 30px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid;
+  transition: 0.4s;
 }
+
+.oversigt:hover {
+  color: #f98012;
+}
+
+.lokale {
+  text-align: center;
+  background-color: rgb(4, 4, 56);
+  color: white;
+  height: 15vmin;
+  padding-top: 5vh;
+  margin-top: 2vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  
+}
+
+li {
+  list-style-type: none;
+  margin: 5vh;
+}
+
+.navbar button {
+  border: none;
+  background-color: inherit;
+  font-size: 20px;
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+.navbar :hover {
+  color: #f98012;
+}
+
+.navbar:visited {
+  color: red;
+}
+
+
+
+
+.grid-container-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+  justify-items: center;
+
+}
+
+
+.card { 
+  background-color: #d1cecf;
+  width: 21rem;
+  padding: 1rem;
+  margin-top: 3rem;
+  
+}
+
+
+.cardText {
+  padding: 2px 16px;
+}
+
+.list {
+  margin-top: 1rem;
+  
+}
+
+.icon {
+  color: #f98012;
+  padding-right: 0.5rem;
+}
+
+
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+  justify-items: center;
+
+  
+}
+
+
+.card-2 {
+  background-color: #d1cecf;
+  width: 15rem;
+  padding: 1rem;
+  margin-top: 5rem;
+}
+
+.cardText-2 {
+  padding: 2px 16px;
+  font-size: 12px;
+}
+
+.list-2 {
+  margin-top: 1rem;
+  font-size: 10px;
+}
+
