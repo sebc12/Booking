@@ -37,6 +37,18 @@ body {
   background-color: rgb(4, 4, 56);
 }
 
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: 0%;
+  padding: 15px 18px;
+  font-size: 30px;
+  transform: translate(0%, -50%);
+}
+.close:hover {
+  background: #bbb;
+}
+
 
 .oversigt {
   color: black;
@@ -90,9 +102,7 @@ li {
 }
 
 
-
-
-.grid-container-1 {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
@@ -103,8 +113,8 @@ li {
 
 .card { 
   background-color: #d1cecf;
-  width: 21rem;
-  padding: 1rem;
+  width: 25rem;
+  padding: 2rem;
   margin-top: 3rem;
   
 }
@@ -131,14 +141,12 @@ li {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2em;
   justify-items: center;
-
-  
 }
 
 
 .card-2 {
   background-color: #d1cecf;
-  width: 15rem;
+  width: 16rem;
   padding: 1rem;
   margin-top: 5rem;
 }
@@ -153,3 +161,118 @@ li {
   font-size: 10px;
 }
 
+.image {
+  width: 100%;
+}
+
+
+
+.oversigtTitle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0fr;
+  margin-top: 5%;
+  background-color: #051638;
+  color: white;
+  
+}
+
+.Oversigt {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.1fr;
+  
+  background-color: #051638;
+  color: white;
+  border-top: 5px solid #f9b54f;
+}
+
+
+
+.BookingForm {
+  width: 30%;
+  margin: auto;
+  margin-top: 8%;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.BookingForm div {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.BookingForm input {
+  font-size: 20px;
+  margin-top: 7px;
+}
+
+.BookingForm button {
+  padding: 7px;
+  background: #FCB040;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  width: 40%;
+  margin: auto;
+  font-size: 0.8em;
+}
+
+.BookingForm button:hover {
+  padding: 7px;
+  background: #051638;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+}
+
+
+
+
+
+
+.errorheader{
+  background: #051638;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.errortext{
+  position: absolute;
+  top: 45%;
+  margin: 0 20%;
+}
+
+.errortext h3{
+  font-size: 2em;
+  margin-bottom: -10px;
+}
+
+.errortext button{
+  padding: 7px;
+  background: #FCB040;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+}
+
+.errortext button:hover{
+  padding: 7px;
+  background: #051638;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+}

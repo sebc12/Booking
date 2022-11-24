@@ -1,17 +1,14 @@
 import './App.css';
-import Header1 from './components/Header1';
+import TheHeader from './components/TheHeader';
 import Navbar from './components/Navbar';
-
-
-
+import BookingForm from './components/BookingForm';
 
 
 function App() {
   return (
     <div>
-      <Header1 />
+      <TheHeader />
       <Navbar />
-
     </div>
   );
 }

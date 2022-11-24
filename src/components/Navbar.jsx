@@ -1,6 +1,8 @@
 import { useState } from "react";
-import Undervisningslokaler from './Undervisningslokaler';
-import Mødelokaler from './Mødelokaler'
+import UndervisningsContent from "./LokaleContent/UndervisningsContent";
+import MødeContent from "./LokaleContent/MødeContent";
+import AlleContent from "./LokaleContent/AlleContent";
+
 
 export default function Navbar () {
 
@@ -30,9 +32,11 @@ export default function Navbar () {
         </div>
         <div>
 
-        {showRoom === "Alle" && <Mødelokaler />}
-        {showRoom === "Mødelokaler" && <Mødelokaler />}
-        {showRoom === "Undervisningslokaler" && <Undervisningslokaler />}
+        
+
+        {showRoom === "Alle" && <AlleContent />}
+        {showRoom === "Mødelokaler" && <MødeContent />}
+        {showRoom === "Undervisningslokaler" && <UndervisningsContent />}
         </div>
         
         </>
