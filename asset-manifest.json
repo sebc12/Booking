@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/sebc12.github.io/Booking/static/css/main.593db365.css",
-    "main.js": "/sebc12.github.io/Booking/static/js/main.0258b0a1.js",
-    "static/js/787.22cf53f4.chunk.js": "/sebc12.github.io/Booking/static/js/787.22cf53f4.chunk.js",
-    "static/media/logo.png": "/sebc12.github.io/Booking/static/media/logo.69ad3bb02175fa680674.png",
-    "static/media/room.jpg": "/sebc12.github.io/Booking/static/media/room.b7c321d4c3f5a012f71c.jpg",
-    "index.html": "/sebc12.github.io/Booking/index.html",
-    "main.593db365.css.map": "/sebc12.github.io/Booking/static/css/main.593db365.css.map",
-    "main.0258b0a1.js.map": "/sebc12.github.io/Booking/static/js/main.0258b0a1.js.map",
-    "787.22cf53f4.chunk.js.map": "/sebc12.github.io/Booking/static/js/787.22cf53f4.chunk.js.map"
+    "main.css": "/Booking/static/css/main.593db365.css",
+    "main.js": "/Booking/static/js/main.5d6362c3.js",
+    "static/js/787.22cf53f4.chunk.js": "/Booking/static/js/787.22cf53f4.chunk.js",
+    "static/media/logo.png": "/Booking/static/media/logo.69ad3bb02175fa680674.png",
+    "static/media/room.jpg": "/Booking/static/media/room.b7c321d4c3f5a012f71c.jpg",
+    "index.html": "/Booking/index.html",
+    "main.593db365.css.map": "/Booking/static/css/main.593db365.css.map",
+    "main.5d6362c3.js.map": "/Booking/static/js/main.5d6362c3.js.map",
+    "787.22cf53f4.chunk.js.map": "/Booking/static/js/787.22cf53f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.593db365.css",
-    "static/js/main.0258b0a1.js"
+    "static/js/main.5d6362c3.js"
   ]
 }
