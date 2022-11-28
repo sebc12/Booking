@@ -1,6 +1,6 @@
 import DeleteBooking from "./DeleteBooking";
 
-export default function OversigtDesign({ room, name, date, id, setBookings }) {
+export default function OversigtDesign({ room, name, date, time, id, setBookings }) {
     
     return (
         <>
@@ -11,6 +11,8 @@ export default function OversigtDesign({ room, name, date, id, setBookings }) {
             <h2>{name}</h2>
                
             <h2>{date}</h2>
+
+            <h2>{time}</h2>
             
             <DeleteBooking id={id} setBookings={setBookings}/>
             </div>

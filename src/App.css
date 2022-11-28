@@ -30,7 +30,6 @@ body {
   color: white;
   cursor: pointer;
   transition: 0.4s;
-
 }
 
 .BookBtn:hover {
@@ -85,7 +84,7 @@ li {
   margin: 5vh;
 }
 
-.navbar button {
+.navbar a {
   border: none;
   background-color: inherit;
   font-size: 20px;
@@ -95,10 +94,6 @@ li {
 
 .navbar :hover {
   color: #f98012;
-}
-
-.navbar:visited {
-  color: red;
 }
 
 
@@ -165,24 +160,33 @@ li {
   width: 100%;
 }
 
-
-
 .oversigtTitle {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 0fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.1fr;
   margin-top: 5%;
   background-color: #051638;
-  color: white;
-  
+  color: white;  
 }
 
 .Oversigt {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 0.1fr;
-  
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.1fr;
   background-color: #051638;
   color: white;
   border-top: 5px solid #f9b54f;
+}
+
+.oversigtBtn {
+  background-color: transparent;
+  color: #FCB040;
+  border: none;
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.oversigtBtn:hover {
+  cursor: pointer;
+  color: white;
 }
 
 
@@ -190,9 +194,14 @@ li {
 .BookingForm {
   width: 30%;
   margin: auto;
-  margin-top: 8%;
+  margin-top: 3%;
   font-size: 25px;
   font-weight: bold;
+}
+
+.bookingOverskrift {
+  text-align: center;
+  margin-top: 5px;
 }
 
 .BookingForm div {
@@ -205,6 +214,16 @@ li {
   font-size: 20px;
   margin-top: 7px;
 }
+
+.BookingForm input::placeholder {
+  color: black;
+}
+
+.BookingForm select {
+  font-size: 20px;
+  margin-top: 7px;
+}
+
 
 .BookingForm button {
   padding: 7px;
@@ -229,6 +248,7 @@ li {
   box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
   -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  cursor: pointer;
 }
 
 

@@ -34,9 +34,10 @@ export default function RoomContent() {
             <h2>Lokale</h2>
             <h2>Navn</h2>
             <h2>Dato</h2>
+            <h2>Tid</h2>
         </div>
    {bookings.map((booking) => {
-        return <OversigtIndhold date={booking.date} room={booking.room} name={booking.name} id={booking.id} setBookings={setBookings} />;
+        return <OversigtIndhold date={booking.date} room={booking.room} name={booking.name} time={booking.time} id={booking.id} setBookings={setBookings} />;
       })}
     </main>
   );

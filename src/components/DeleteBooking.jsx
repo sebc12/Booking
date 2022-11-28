@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FaTrashAlt } from 'react-icons/fa';
 
 export default function DeleteBooking({id, setBookings}) {
     
@@ -18,7 +18,7 @@ export default function DeleteBooking({id, setBookings}) {
         
     return (
         <div>
-            <button className="oversigtBtn" onClick={handleDeleteBooking}>Slet</button>
+            <button className="oversigtBtn" onClick={handleDeleteBooking}><FaTrashAlt /></button>
         </div>
     );
 }

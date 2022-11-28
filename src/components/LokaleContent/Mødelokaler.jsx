@@ -23,7 +23,6 @@ export default function Mødelokaler({ id, room, description, plug, sun, people,
                <p><icon className="icon">{IconSun}</icon>{sun} </p>
                <p><icon className="icon">{IconPeople}</icon>{people}</p>
                <p> <icon className="icon">{IconProjector}</icon>{projector}</p>
-               <span>{id}</span>
             </div>
         </div>
         </div>

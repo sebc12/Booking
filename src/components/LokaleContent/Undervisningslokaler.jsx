@@ -22,7 +22,6 @@ export default function Undervisningslokaler({ id, room, description, plug, sun,
                <p><icon className="icon">{IconSun}</icon>{sun} </p>
                <p><icon className="icon">{IconPeople}</icon>{people}</p>
                <p> <icon className="icon">{IconProjector}</icon>{projector}</p>
-               <span>{id}</span>
             </div>
         </div>
         </div>

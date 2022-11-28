@@ -33,7 +33,7 @@ export default function TheHeader () {
         contentLabel="Create booking form"
       >
         <span class="close" onClick={closeModal}>&times;</span>
-        <BookingForm />
+        <BookingForm closeModal={closeModal} />
       </Modal>
       <Modal
         isOpen={modalIsOpen2}

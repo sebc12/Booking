@@ -8,9 +8,7 @@ export default function Navbar () {
 
     const [showRoom, setShowRoom] = useState("Alle");
 
-    
-
-
+  
    
     return (
 
@@ -18,14 +16,14 @@ export default function Navbar () {
         <div>
             <ul className="navbar">
                 <li>
-                    <button className="btn" onClick={() => setShowRoom("Alle")}>Alle</button>
+                    <a className="btn" onClick={() => setShowRoom("Alle")}>Alle</a>
                 </li>
                 <li>
-                    <button className="btn" onClick={() => setShowRoom("Undervisningslokaler")}>Undervisningslokaler</button>
+                    <a className="btn" onClick={() => setShowRoom("Undervisningslokaler")}>Undervisningslokaler</a>
                     
                 </li>
                 <li>
-                    <button className="btn" onClick={() => setShowRoom("Mødelokaler")}>Mødelokaler</button>
+                    <a className="btn" onClick={() => setShowRoom("Mødelokaler")}>Mødelokaler</a>
                 </li>
                 
             </ul>
