@@ -1,4 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { transformToArray } from "../firebase-utils";
+
+
+const url =
+  "https://roombookings-f0b23-default-rtdb.europe-west1.firebasedatabase.app/.json";
 
 export default function BookingForm({ closeModal }) {
 
@@ -6,6 +11,22 @@ export default function BookingForm({ closeModal }) {
     const [date, setDate] = useState("");
     const [name, setName] = useState("");
     const [time, setTime] = useState("");
+
+    
+    useEffect((data) => {
+      // Håndtere async logik/kode
+      async function getData() {
+        // Vi laver vores fetch kald, og får et http response fra vores firebase
+        const response = await fetch(url);
+        // Vi får body ud af det http response
+        const body = await response.json();
+        // Vi laver det mærkelige firebase object om til et array.
+        const asArray = transformToArray(body);
+        console.log(asArray)
+      }
+      getData();
+
+    }, []);
     
 
     const handleRoom = (event) => {
@@ -25,11 +46,12 @@ export default function BookingForm({ closeModal }) {
         setTime(event.target.value);
       };
     
-      const handleSubmit = async (event) => {
-        event.preventDefault();
+      const handleSubmit = async (data) => {
+        
         if (name === "" || room == "" || date == "" || time == "") {
             
       } else {
+       
         let booking = { room: room, name: name, date: date, time: time };
           const response = await fetch('https://roombookings-f0b23-default-rtdb.europe-west1.firebasedatabase.app/.json',
           { 
@@ -38,6 +60,7 @@ export default function BookingForm({ closeModal }) {
           })
           closeModal();
       }}
+      
     return (
         <>
         <div className="bookingOverskrift">
@@ -76,7 +99,7 @@ export default function BookingForm({ closeModal }) {
             <option value="12:30-16:00">12:30-16:00</option>
             </select> </div>
 
-           <div> <button type="submit" onClick={handleSubmit}>Gem booking</button></div>
+           <div> <button type="button" onClick={handleSubmit}>Gem booking</button></div>
         </form>
 
         </>

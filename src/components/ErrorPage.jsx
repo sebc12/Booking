@@ -1,4 +1,8 @@
 export default function ErrorPage() {
+
+  const handleButton = () => {
+    window.location.reload();
+  }
   
     return (
       <>
@@ -8,8 +12,8 @@ export default function ErrorPage() {
         </div>
         <div className="errortext">
           <h3>Vi beklager!</h3>
-          <p>Den side leder efter findes ikke</p>
-          <button>Gå til fosiden</button>
+          <p>Den side du leder efter findes ikke</p>
+          <button onClick={handleButton}>Gå til fosiden</button>
         </div>
       </div>
       </>

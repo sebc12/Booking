@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { transformToArray } from "../../firebase-utils";
 import AlleLokaler from "./AlleLokaler";
 import Spinner from "../atoms/Spinner";
+import ErrorPage from "../ErrorPage";
 
 
 const url =
@@ -15,6 +16,7 @@ export default function RoomContent() {
 
 
     const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
     
 
   useEffect(() => {
@@ -25,6 +27,7 @@ export default function RoomContent() {
     async function getData() {
       // Vi laver vores fetch kald, og får et http response fra vores firebase
       const response = await fetch(url);
+      if (response.status == 200) {
       
       // Vi får body ud af det http response
       const body = await response.json();
@@ -41,7 +44,9 @@ export default function RoomContent() {
       
       setRooms([...asArray, ...asArray2]);
 
-      
+    } else {
+      setIsError(true);
+    }
 
       setIsLoading(false);
     }
@@ -57,6 +62,7 @@ export default function RoomContent() {
     <main>
       
       { isLoading && <Spinner /> }
+      {isError && <ErrorPage />}
          <div className="grid-container">
        {rooms.map((room)=> {
             return <AlleLokaler 
