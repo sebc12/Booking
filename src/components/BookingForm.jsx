@@ -12,8 +12,10 @@ export default function BookingForm({ closeModal }) {
     const [name, setName] = useState("");
     const [time, setTime] = useState("");
 
+    const [bookings, setBookings] = useState([])
+
     
-    useEffect((data) => {
+    useEffect(() => {
       // Håndtere async logik/kode
       async function getData() {
         // Vi laver vores fetch kald, og får et http response fra vores firebase
@@ -22,7 +24,8 @@ export default function BookingForm({ closeModal }) {
         const body = await response.json();
         // Vi laver det mærkelige firebase object om til et array.
         const asArray = transformToArray(body);
-        console.log(asArray)
+        setBookings(asArray);
+        
       }
       getData();
 
@@ -45,21 +48,63 @@ export default function BookingForm({ closeModal }) {
         // date
         setTime(event.target.value);
       };
-    
-      const handleSubmit = async (data) => {
-        
-        if (name === "" || room == "" || date == "" || time == "") {
-            
-      } else {
-       
+      
+      function errortext (props) {
+        return <p>Dette lokale er allerede booked.</p>
+      }
+
+      const handleSubmit = async () => {
         let booking = { room: room, name: name, date: date, time: time };
+
+        if (name === "" || room == "" || date == "" || time == "") {
+              
+      
+      }else if (validateAlreadyBooked(booking)) {
+        // hvis der er doppelt booking
+        //aktiver conditional rendering på fejlbesked. (Fejlbesked skal vises)
+      
+
+
+        
+
+        
+      } else{
+        //Hvis alt er godt.
+      // Deaktiver condtional rendering på fejlbeskeden. (Fejlbesked skal IKKE vises)
+        
           const response = await fetch('https://roombookings-f0b23-default-rtdb.europe-west1.firebasedatabase.app/.json',
           { 
             method: 'POST', 
             body: JSON.stringify(booking)
           })
           closeModal();
+          
       }}
+
+
+      function validateAlreadyBooked(booking) {
+        // Vi starter med at finde alle bookinger, der har samme lokale som den ønskede booking
+        const matchingRoom = bookings.filter((setBookings) => {
+          return (
+            setBookings.room == booking.room &&
+            setBookings.date == booking.date &&
+            setBookings.time == booking.time
+          );
+        });
+
+        // vi får et array tilbage
+        if (matchingRoom.length === 0) {
+          // Hvis den IKKE ER dobbelt booket
+          return false;
+        } else {
+          // Hvis den ER dobbelt.
+          return true;
+        }
+      }
+
+
+
+
       
     return (
         <>
@@ -98,10 +143,13 @@ export default function BookingForm({ closeModal }) {
             <option value="08:30-12:00">08:30-12:00</option>
             <option value="12:30-16:00">12:30-16:00</option>
             </select> </div>
-
+            <p>Fejl</p>
            <div> <button type="button" onClick={handleSubmit}>Gem booking</button></div>
         </form>
 
         </>
     )
 }
+
+
+
