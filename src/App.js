@@ -1,16 +1,15 @@
 import './App.css';
-import TheHeader from './components/TheHeader';
-import Navbar from './components/Navbar';
-
+import * as React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Routing from './components/Routing';
 
 
 function App() {
   return (
     <div>
-
-      
-      <TheHeader />
-      <Navbar />
+     <BrowserRouter>
+        <Routing />
+      </BrowserRouter>
     </div>
   );
 }

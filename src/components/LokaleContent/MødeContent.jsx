@@ -39,7 +39,7 @@ export default function RoomContent() {
       const body = await response.json();
       // Vi laver det mærkelige firebase object om til et array.
       const asArray = transformToArray(body);
-      console.log(asArray);
+     
       setRooms(asArray);
       
     } else {

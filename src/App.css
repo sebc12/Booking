@@ -300,3 +300,79 @@ li {
   -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
 }
+
+/*Log inn page style*/
+
+.logincontainer{
+   position: absolute;
+   top: 30%;
+   left: 45%;
+   display: flex;
+   flex-direction:column;
+  }
+
+  .logincontainer h1{
+    text-align: center;
+    font-size: 3em;
+  }
+  .logincontainer form{
+    display: flex;
+    flex-direction:column;
+   margin-top: 10px;
+  }
+  .logincontainer label{
+   margin-top: 10px;
+   font-size: 1rem;
+  }
+
+  .signup{
+    margin-left: 25%;
+    width: 50%;
+    margin-top: 10px;
+     padding: 7px;
+  background: #FCB040;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  cursor: pointer;
+  }
+
+  .signup:hover{
+    padding: 7px;
+  background: #051638;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  }
+
+  .loginbtn{
+    margin: auto;
+    width: 50%;
+    margin-top: 10px;
+    padding: 7px;
+    background: #FCB040;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+    cursor: pointer;
+  }
+
+  .loginbtn:hover{
+    padding: 7px;
+  background: #051638;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 8px 13px -9px rgba(0,0,0,0.75);
+  }

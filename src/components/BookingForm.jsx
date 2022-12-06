@@ -11,6 +11,7 @@ export default function BookingForm({ closeModal }) {
     const [date, setDate] = useState("");
     const [name, setName] = useState("");
     const [time, setTime] = useState("");
+    const [error, setError] = useState(false)
 
     const [bookings, setBookings] = useState([])
 
@@ -49,11 +50,10 @@ export default function BookingForm({ closeModal }) {
         setTime(event.target.value);
       };
       
-      function errortext (props) {
-        return <p>Dette lokale er allerede booked.</p>
-      }
+     
 
-      const handleSubmit = async () => {
+      const handleSubmit = async (event) => {
+        event.preventDefault()
         let booking = { room: room, name: name, date: date, time: time };
 
         if (name === "" || room == "" || date == "" || time == "") {
@@ -62,11 +62,7 @@ export default function BookingForm({ closeModal }) {
       }else if (validateAlreadyBooked(booking)) {
         // hvis der er doppelt booking
         //aktiver conditional rendering på fejlbesked. (Fejlbesked skal vises)
-      
-
-
-        
-
+      return setError(true)
         
       } else{
         //Hvis alt er godt.
@@ -101,10 +97,6 @@ export default function BookingForm({ closeModal }) {
           return true;
         }
       }
-
-
-
-
       
     return (
         <>
@@ -143,8 +135,8 @@ export default function BookingForm({ closeModal }) {
             <option value="08:30-12:00">08:30-12:00</option>
             <option value="12:30-16:00">12:30-16:00</option>
             </select> </div>
-            <p>Fejl</p>
-           <div> <button type="button" onClick={handleSubmit}>Gem booking</button></div>
+            { error && <p>Lokalet er desværre optaget. Prøv et andet.</p>}
+           <div> <button type="submit" onClick={handleSubmit}>Gem booking</button></div>
         </form>
 
         </>
