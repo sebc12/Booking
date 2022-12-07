@@ -12,6 +12,7 @@ export default function BookingForm({ closeModal }) {
     const [name, setName] = useState("");
     const [time, setTime] = useState("");
     const [error, setError] = useState(false)
+    const [error2, setError2] = useState(false)
 
     const [bookings, setBookings] = useState([])
 
@@ -57,6 +58,7 @@ export default function BookingForm({ closeModal }) {
         let booking = { room: room, name: name, date: date, time: time };
 
         if (name === "" || room == "" || date == "" || time == "") {
+          return setError2(true)
               
       
       }else if (validateAlreadyBooked(booking)) {
@@ -136,9 +138,9 @@ export default function BookingForm({ closeModal }) {
             <option value="12:30-16:00">12:30-16:00</option>
             </select> </div>
             { error && <p>Lokalet er desværre optaget. Prøv et andet.</p>}
+            { error2 && <p>Udfyld de tomme felter</p>}
            <div> <button type="submit" onClick={handleSubmit}>Gem booking</button></div>
         </form>
-
         </>
     )
 }
