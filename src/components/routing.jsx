@@ -1,8 +1,9 @@
 import * as React from "react";
-import BookingPage from "./BookingPage";
+import Booking from "./Booking";
 import { Routes, Route } from "react-router-dom";
 import Signup from './Signup';
 import Signin from "./Signin";
+
 
 
 export default function Routing() {
@@ -17,7 +18,14 @@ export default function Routing() {
           <Route index element={<Signin />} />
           <Route path="Signin" element={<Signin />} />
             <Route path="Signup" element={<Signup />} />
-            <Route path="BookingPage" element={<BookingPage />} />
+
+            <Route path="Booking" 
+            element={
+            
+            <Booking />
+            
+            } 
+            />
           
           </Route>
         </Routes>

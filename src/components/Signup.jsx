@@ -7,12 +7,13 @@ import { FaArrowCircleLeft } from 'react-icons/fa';
 
 
 function Signup() {
+
   const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(false)
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false)
 
 
-    const handleEmail = (event) => {
+  const handleEmail = (event) => {
       setEmail(event.target.value);
   }
   const handlePassword = (event) => {
@@ -42,12 +43,11 @@ function Signup() {
         return setError(true)
       } else {
         navigate("/Signin");
-      };
-      
+      };     
   };
 
 
-return (
+  return (
   <>
   <img src={logo} className="App-logo" alt="logo" />
   <div>

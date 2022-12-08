@@ -3,6 +3,8 @@ import Modal from "react-modal";
 import { useState } from "react";
 import BookingForm from './BookingForm';
 import Oversigt from './Oversigt';
+import Signout from './Signout';
+
 
 
 export default function TheHeader () {
@@ -47,7 +49,7 @@ export default function TheHeader () {
             <div className='header'>
                 <img src={logo} className="App-logo" alt="logo" />
                 <button className='BookBtn' onClick={openModal}>Book nu</button>
-            
+                <Signout />
                 <a className='oversigt' onClick={openModal2} href='#'>Min oversigt</a>
                 </div>
                 <div className='lokale'>

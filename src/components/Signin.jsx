@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "./img/logo.png";
+import Booking from './Booking'
 
-function Signin() {
-  const [email, setEmail] = useState("");
+
+export default function Signin() {
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+
     const [error, setError] = useState(false)
     const [error1, setError1] = useState(false)
 
@@ -39,12 +43,12 @@ function Signin() {
      if (email == "" && password == "") {
         return setError1(true)
         }
-        else if(result.error) {
+      else if(result.error) {
         return setError(true)
       } 
     
       else {
-        navigate("/BookingPage");
+        navigate("/Booking");
       } 
     };
            
@@ -64,15 +68,17 @@ return (
         <input type="password" placeholder='Kode' onChange={handlePassword} required></input>
       
           <button className="loginbtn" onClick={handleSignin}>Log ind</button>
+
         <Link to="/Signup">
           <button className="signup">Sign up</button>
         </Link>
+
       </form>
     </div>
+    <div>
     { error && <p className="errortext">*Forkert email eller kode</p>}
-          { error1 && <p className="errortext">*Husk at udfylde </p>}
+    { error1 && <p className="errortext">*Husk at udfylde </p>}
+    </div>
     </>
   );
-}
-
-export default Signin;
+};

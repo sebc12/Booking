@@ -38,16 +38,12 @@ export default function RoomContent() {
       // Vi får body ud af det http response
       const body2 = await response2.json();
       // Vi laver det mærkelige firebase object om til et array.
-      const asArray2 = transformToArray(body2);
-
-
-      
+      const asArray2 = transformToArray(body2); 
       setRooms([...asArray, ...asArray2]);
 
     } else {
       setIsError(true);
     }
-
       setIsLoading(false);
     }
 
@@ -55,7 +51,6 @@ export default function RoomContent() {
   }, []);
 
   useEffect(() => {
-    console.log(rooms)
   }, [rooms])
 
   return (
