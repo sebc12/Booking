@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "./img/logo.png";
-import Booking from './Booking'
 
 
-export default function Signin() {
+
+export default function Signin(props) {
+    // Hvis der ER en token, så´navigate til BOoking
+    // props.token
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
 
-    const [error, setError] = useState(false)
-    const [error1, setError1] = useState(false)
+    const [isError, setIsError] = useState(false)
+    const [isError1, setIsError1] = useState(false)
 
 
 
@@ -41,18 +43,19 @@ export default function Signin() {
       console.log(result);
 
      if (email == "" && password == "") {
-        return setError1(true)
+        return setIsError1(true)
         }
       else if(result.error) {
-        return setError(true)
+        return setIsError(true)
       } 
     
       else {
+        props.setDisplayName(result.displayName)
+        props.setToken(result.idToken)
         navigate("/Booking");
       } 
     };
            
-
 return (
   <>
   <img src={logo} className="App-logo" alt="logo" />
@@ -76,8 +79,8 @@ return (
       </form>
     </div>
     <div>
-    { error && <p className="errortext">*Forkert email eller kode</p>}
-    { error1 && <p className="errortext">*Husk at udfylde </p>}
+    { isError && <p className="errortext">*Forkert email eller kode</p>}
+    { isError1 && <p className="errortext">*Husk at udfylde </p>}
     </div>
     </>
   );

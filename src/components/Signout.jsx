@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaSignOutAlt } from 'react-icons/fa';
 
 
 
@@ -8,7 +9,7 @@ export default function Signout() {
    
     return (
         <Link to="/Signin">
-          <button className="BookBtn">Log ud</button>
+          <button className="signout"><FaSignOutAlt /></button>
         </Link>
     )
 }

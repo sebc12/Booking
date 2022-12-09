@@ -3,8 +3,7 @@ import DeleteBooking from "./DeleteBooking";
 export default function OversigtDesign({ room, name, date, time, id, setBookings }) {
     
     return (
-        <>
-        
+        <>      
            <div className="Oversigt">
             <h2>{room}</h2>
  
@@ -16,8 +15,6 @@ export default function OversigtDesign({ room, name, date, time, id, setBookings
             
             <DeleteBooking id={id} setBookings={setBookings}/>
             </div>
-            
-        
      </>   
     )
 }

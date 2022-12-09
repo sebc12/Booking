@@ -47,7 +47,7 @@ export default function RoomContent() {
             <h2>Dato</h2>
             <h2>Tid</h2>
         </div>
-        { isLoading && <Spinner /> }
+        {isLoading && <Spinner /> }
         {isError && <ErrorPage />}
    {bookings.map((booking) => {
         return <OversigtIndhold date={booking.date} room={booking.room} name={booking.name} time={booking.time} id={booking.id} setBookings={setBookings} />;

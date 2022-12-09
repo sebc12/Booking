@@ -5,11 +5,11 @@ import { transformToArray } from "../firebase-utils";
 const url =
   "https://roombookings-f0b23-default-rtdb.europe-west1.firebasedatabase.app/.json";
 
-export default function BookingForm({ closeModal }) {
+export default function BookingForm({ closeModal, displayName }) {
 
     const [room, setRoom] = useState("");
     const [date, setDate] = useState("");
-    const [name, setName] = useState("");
+    const [name, setName] = useState(displayName);
     const [time, setTime] = useState("");
     const [error, setError] = useState(false)
     const [error2, setError2] = useState(false)
@@ -51,7 +51,6 @@ export default function BookingForm({ closeModal }) {
         setTime(event.target.value);
       };
       
-     
 
       const handleSubmit = async (event) => {
         event.preventDefault()
@@ -107,7 +106,7 @@ export default function BookingForm({ closeModal }) {
         </div>
         <form className="BookingForm">    
            <div><label>Navn og efternavn</label>
-           <input type="text" name="name" placeholder="Navn" required onChange={handleName}/></div>
+           <input type="text" name="name" value={name} required onchange={handleName}/></div>
 
            <div><label>Lokale</label>
            <select required name="room" id="cars" onChange={handleRoom}>
@@ -137,8 +136,8 @@ export default function BookingForm({ closeModal }) {
             <option value="08:30-12:00">08:30-12:00</option>
             <option value="12:30-16:00">12:30-16:00</option>
             </select> </div>
-            { error && <p>Lokalet er desværre optaget. Prøv et andet.</p>}
-            { error2 && <p>Udfyld de tomme felter</p>}
+            { error && <p className="errortext3">Lokalet er desværre optaget. Prøv et andet.</p>}
+            { error2 && <p className="errortext3">Udfyld de tomme felter</p>}
            <div> <button type="submit" onClick={handleSubmit}>Gem booking</button></div>
         </form>
         </>
