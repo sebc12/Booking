@@ -126,7 +126,7 @@ header .nav-btn {
   color: #FCB040;
   border: none;
   font-size: 35px;
-  position: fixed;
+  position: absolute;
   margin-top: 30px;
 }
 
